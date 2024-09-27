@@ -2,6 +2,7 @@ const gridButton = document.querySelector("#grid-button");
 const monochromeButton = document.querySelector("#monochrome-button");
 const resetButton = document.querySelector("#reset-button");
 const gridContainer = document.querySelector("#grid-container");
+let currentGridSize = 10;
 
 // Checking input
 gridButton.addEventListener("click", () => {
@@ -27,14 +28,14 @@ monochromeButton.addEventListener("click", () => {
     monochromeButton.textContent = monochrome ? "Color Mode" : "Monochrome Mode"; // Change to appropriate button text
 });
 
-let currentGridSize = 0;
-
 // Reset grid
 resetButton.addEventListener("click", () => {
     gridContainer.textContent = "";
 
     createGrid(currentGridSize);
 });
+
+createGrid(currentGridSize);
 
 // Creating grid
 function createGrid(grid) {
